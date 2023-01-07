@@ -1,24 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import PostList from "./components/PostList";
 
 function App() {
-  const [likes, setLikes] = useState(0);
-  const [text, setText] = useState('Init text');
-
-  function increment() {
-    setLikes(likes + 1);
-  }
-
-  function decrement() {
-    setLikes(likes - 1);
-  }
+  const [posts] = useState([
+    {id:1, title: 'PostTitle1', body: 'Bla-bla'},
+    {id:2, title: 'PostTitle2', body: 'Bla-bla'},
+    {id:3, title: 'PostTitle3', body: 'Bla-bla'},
+  ])
 
   return (
     <div>
-      <h2>{likes}</h2>
-      <h2>{text}</h2>
-      <input text={text} onChange={event => setText(event.target.value)}/>
-      <button onClick={increment}>increment</button>
-      <button onClick={decrement}>decrement</button>
+      <PostList posts={posts} />
     </div>
   );
 }
