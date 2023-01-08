@@ -1,7 +1,7 @@
-function PostItem({post}) {
+function PostItem({post, number}) {
     return ( 
         <div>
-            <h1>{post.title}</h1>
+            <h1>{number}. {post.title}</h1>
             <p>{post.body}</p>
         </div>
      );
