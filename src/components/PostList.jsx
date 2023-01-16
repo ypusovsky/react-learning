@@ -1,8 +1,10 @@
 import PostItem from './PostItem';
 
-function PostList({posts, title, remove}) {
+function PostList({posts, title, remove, isPostsLoading}) {
     if (!posts.length) {
-        return (<h1 style={{textAlign:'center'}}>Посты не были найдены!</h1>);
+        return (<h1 style={{textAlign:'center'}}>
+            {isPostsLoading ? 'Посты в процессе загрузки...' : 'Посты не были найдены!'}
+            </h1>);
     }
 
     return ( 
